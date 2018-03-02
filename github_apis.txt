@@ -1,0 +1,4 @@
+https://developer.github.com/v3/#current-version
+
+curl -u "<username>" https://api.github.com
+curl -X GET https://api.github.com/rate_limit
