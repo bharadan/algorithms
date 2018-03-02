@@ -1,9 +1,11 @@
 /* Requires the Docker Pipeline plugin */
-node('docker') {
-  checkout scm
-  stage('Build') {
-    docker.image('ruby').inside {
-      sh 'ruby --version'
+pipeline {
+  agent { docker 'ruby'}
+  stages {
+    stage('build') {
+      steps {
+        sh 'ruby --version'
+      }
     }
   }
 }
